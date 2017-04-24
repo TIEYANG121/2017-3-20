@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		.box{
+			width:366px;
+			height:200px;
+			border:5px solid red;
+			margin:100px auto;
+			perspective: 800px;
+			position: relative;
+		}
+		.back,.front{
+			width: 366px;
+			height: 200px;
+			position: absolute;
+			top:0px;
+			left:0px;
+		}
+
+		.back{
+			background-color: blue;
+			transform:rotateY(180deg);
+		}
+		.front{
+			background-color: yellow;
+			backface-visibility: hidden;
+		}
+
+		.inner-box{
+			transition: transform 6s;
+			transform-style: preserve-3d;
+		}
+
+		.box:hover .inner-box{
+			transform:rotateY(180deg);
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="inner-box">
+			<div class="back">
+				<img src="images/back.jpg" alt="">
+			</div>
+			<div class="front">
+				<img src="images/front.jpg" alt="">
+			</div>
+		</div>
+	</div>
+</body>
+</html>
